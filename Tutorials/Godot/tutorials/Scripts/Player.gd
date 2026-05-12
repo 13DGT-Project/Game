@@ -31,6 +31,11 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta: float) -> void:
+	
+	if %SeeCast.is_colliding():
+		var target = %SeeCast.get_collider()
+		print(target)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
