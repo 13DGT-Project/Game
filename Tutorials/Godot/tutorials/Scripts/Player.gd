@@ -10,7 +10,7 @@ var gravity = 9.81
 
 #Head Bobbing variables
 const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_AMP = 0.2
 var t_bob = 0.0
 
 #fov variable
@@ -31,11 +31,17 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta: float) -> void:
-	
+	%InteractText.hide()
 	if %SeeCast.is_colliding():
 		var target = %SeeCast.get_collider()
-		print(target)
-	
+		if target != null and target.has_method("interact"):
+			print("You can pick up this item")
+			%InteractText.show()
+			if Input.is_action_just_pressed("Interact"):
+				target.interact()
+		
+		
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

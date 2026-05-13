@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvhei2c2fhuxr"]
 
 [ext_resource type="PackedScene" uid="uid://bmw8jt0g8ncp5" path="res://Sprite/character_body_3d.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://d264gg36xcoj6" path="res://static_body_3d.gd" id="2_fj7yv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,7 +33,13 @@ albedo_color = Color(0.37254903, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
 albedo_color = Color(1, 0, 0.37254903, 1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fj7yv"]
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_f3sb7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tlwt5"]
+margin = 0.0
+height = 1.2687988
 
 [node name="World" type="Node3D" unique_id=1825589345]
 
@@ -95,6 +102,15 @@ material_override = SubResource("StandardMaterial3D_dwbse")
 use_collision = true
 size = Vector3(1, 1, 0.84375)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1570460331]
-transform = Transform3D(0.21139711, 0, 0, 0, -0.0013148594, -0.2543016, 0, 0.2391613, -0.0013980977, -2.3017259, 0.47063494, 2.380559)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1840578432]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, -4.656613e-10, 0, 0, 1.0000001, -2.312425, 0.43388456, 2.3779974)
+physics_material_override = SubResource("PhysicsMaterial_fj7yv")
+script = ExtResource("2_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1570460331]
+transform = Transform3D(0.21139714, 0, 0, 0, -0.0013148593, -0.2543016, 0, 0.23916128, -0.0013980976, 0.010699034, 0.036750376, 0.0025615692)
 mesh = SubResource("CylinderMesh_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1372811948]
+transform = Transform3D(0.21370643, 0, 0, 0, -0.006592178, -0.19091557, 0, 0.39590645, -0.0031793476, 0.012389421, 0.061372876, 0.0077614784)
+shape = SubResource("CylinderShape3D_tlwt5")
