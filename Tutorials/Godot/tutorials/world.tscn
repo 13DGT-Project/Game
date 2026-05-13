@@ -44,7 +44,7 @@ shadow_enabled = true
 environment = SubResource("Environment_aqk2v")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=628119953]
-transform = Transform3D(25.46612, 0, 0, 0, -0.0048875827, 0, 0, 0, 24.124737, 0.04025364, 0.04643774, 0.04189539)
+transform = Transform3D(25.46612, 0, 0, 0, -0.0048875827, 0, 0, 0, 24.124737, 0.05119419, 0.06773639, 0.04853487)
 layers = 2
 material_override = SubResource("StandardMaterial3D_f3sb7")
 use_collision = true
