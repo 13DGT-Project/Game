@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bmw8jt0g8ncp5" path="res://Sprite/character_body_3d.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://d264gg36xcoj6" path="res://static_body_3d.gd" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://c2yue4anrltdw" path="res://jp_candsurroundings.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ckhjslew8p0hb" path="res://JPCandsurroundingsnew.glb" id="4_036b0"]
+[ext_resource type="PackedScene" uid="uid://dc1gxv0se12s5" path="res://jpcnew_candsurroundings.tscn" id="5_036b0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,6 +60,7 @@ material_override = SubResource("StandardMaterial3D_f3sb7")
 use_collision = true
 
 [node name="CharacterBody3D" parent="." unique_id=110456384 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(0.20556115, 0, 0, 0, 0.2625359, 0, 0, 0, 0.23996577, 75.27867, 4.8296204, -90.60742)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1525412518]
 transform = Transform3D(1, 0, 0, 0, 2.301998, 0, 0, 0, 23.213331, -12.261252, 1.2374544, 0.17710367)
@@ -114,3 +118,12 @@ mesh = SubResource("CylinderMesh_f3sb7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1372811948]
 transform = Transform3D(0.21370643, 0, 0, 0, -0.006592178, -0.19091557, 0, 0.39590645, -0.0031793476, 0.012389421, 0.061372876, 0.0077614784)
 shape = SubResource("CylinderShape3D_tlwt5")
+
+[node name="JPCandsurroundings" parent="." unique_id=495704178 instance=ExtResource("3_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.85829, 0, 210.05154)
+
+[node name="JPCandsurroundingsnew" parent="." unique_id=1882655208 instance=ExtResource("4_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 364.1135, 193.76974, -90.60112)
+
+[node name="JPCandsurroundings2" parent="." unique_id=1719780750 instance=ExtResource("5_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.88344, -7.458458, -44.231194)
