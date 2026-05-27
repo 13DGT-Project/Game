@@ -60,7 +60,7 @@ material_override = SubResource("StandardMaterial3D_f3sb7")
 use_collision = true
 
 [node name="CharacterBody3D" parent="." unique_id=110456384 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(0.20556115, 0, 0, 0, 0.2625359, 0, 0, 0, 0.23996577, 75.27867, 4.8296204, -90.60742)
+transform = Transform3D(0.20556115, 0, 0, 0, 0.2625359, 0, 0, 0, 0.23996577, 60.411667, 4.8296204, -66.95283)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1525412518]
 transform = Transform3D(1, 0, 0, 0, 2.301998, 0, 0, 0, 23.213331, -12.261252, 1.2374544, 0.17710367)
